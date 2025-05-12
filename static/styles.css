@@ -90,14 +90,14 @@ h2 {
     color: red;
 }
 
-/* Para telas menores */
+
 @media (max-width: 768px) {
     .acoes-container {
         flex-wrap: nowrap;
         overflow-x: auto;
         justify-content: flex-start;
         padding-bottom: 15px;
-        -webkit-overflow-scrolling: touch; /* Para melhor scroll em dispositivos iOS */
+        -webkit-overflow-scrolling: touch;
     }
 
     .data-card {
