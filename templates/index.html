@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumo das Ações</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Resumo das Ações</h1>
+        <div class="acoes-container">
+            {% for data in data %}
+                <div class="data-card">
+                    <img src="{{ data.logo }}" alt="{{ data.simbolo }}" class="logo">
+                    <h2>{{ data.simbolo }}</h2>
+                    <p class="nome">{{ data.nome }}</p>
+                    <p class="preco">R$ {{ data.preco }}</p>
+                    <p class="variacao {% if data.variacao > 0 %}positivo{% else %}negativo{% endif %}">
+                        {{ data.variacao }}%
+                    </p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
